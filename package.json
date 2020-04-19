@@ -1,0 +1,38 @@
+{
+  "name": "haiku-cli",
+  "author": "Samuel Thomas",
+  "license": "ISC",
+  "version": "1.0.0",
+  "description": "this is a program / that can help you to create / summer poetry",
+  "main": "index.js",
+  "bin": {
+    "haiku": "index.js"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "tape **/*.test.js",
+    "release": "release-it"
+  },
+  "dependencies": {
+    "clipboardy": "^2.1.0",
+    "enquirer": "^2.3.4"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.3",
+    "prettier": "^2.0.4",
+    "release-it": "^12.4.3",
+    "tape": "^4.13.0"
+  },
+  "release-it": {
+    "hooks": {
+      "before:init": [
+        "npm run lint"
+      ],
+      "github": {
+        "release": true
+      }
+    }
+  }
+}
